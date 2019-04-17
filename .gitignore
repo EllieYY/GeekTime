@@ -1,7 +1,8 @@
 ##ignore this file##
 /target/
 /zl/
-.idea
-.log
-.project
-.settings
+*.idea
+*.log
+*.project
+*.settings
+*.jpg
