@@ -1,7 +1,8 @@
 import pandas as pd
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.tree import DecisionTreeClassifier
-
+import numpy as np
+from sklearn.model_selection import cross_val_score
 
 train_data = pd.read_csv('./train.csv')
 test_data = pd.read_csv('./test.csv')
@@ -33,6 +34,8 @@ pred_lables = clf.predict(test_features)
 acc_decision_tree = round(clf.score(train_features, train_labels), 6)
 print(u'score 准确率为 %.4lf' % acc_decision_tree)
 
+# K折交叉验证
+print(u'cross_val_score 准确率为 %.4lf' % np.mean(cross_val_score(clf, train_features, train_labels, cv=10)))
 
 
 
